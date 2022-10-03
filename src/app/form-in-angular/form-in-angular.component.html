@@ -1,0 +1,26 @@
+<form class="w-50 m-auto" #SigninForm="ngForm" (ngSubmit)="LoginUser(SigninForm)">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">First Name :</label>
+        <input type="text" class="form-control" name="fName" ngModel required #fName="ngModel">
+        <small *ngIf="fName.touched && !fName.valid">Please Enter First Name</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Last Name :</label>
+        <input type="text" class="form-control" name="lName" ngModel required #lName="ngModel">
+        <small *ngIf="lName.touched && !lName.valid">Please Enter Last Name</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="EmailAddress" ngModel required #EmailAddress="ngModel">
+        <small *ngIf="EmailAddress.touched && !EmailAddress.valid">Please Enter Email Address</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="Password" ngModel required>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" name="Terms" ngModel>
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!SigninForm.valid">Login</button>
+</form>

@@ -1,0 +1,31 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="ReactiveValue()" class="w-50 m-auto">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">First Name :</label>
+        <input type="text" class="form-control" formControlName="fName">
+        <small *ngIf="reactiveForm.get('fName').touched && reactiveForm.get('fName').hasError('required')">Please Enter
+            First Name</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Last Name :</label>
+        <input type="text" class="form-control" formControlName="lName">
+        <small *ngIf="reactiveForm.get('lName').touched && reactiveForm.get('lName').hasError('required')">Please Enter
+            Second Name</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" formControlName="emailadd">
+        <small *ngIf="reactiveForm.get('emailadd').touched && reactiveForm.get('emailadd').hasError('required')">Please
+            Enter Email address</small>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="Password">
+        <small *ngIf="reactiveForm.get('Password').touched && reactiveForm.get('Password').hasError('required')">Please
+            Enter Password</small>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!reactiveForm.valid">Submit</button>
+</form>
